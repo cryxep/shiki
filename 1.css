@@ -1,0 +1,222 @@
+:root{
+	--headline-background-color: #fff!important;
+	--headline-border-color: #63abe5!important;
+	--link-hover-color: #000!important;
+	--headline-color: #000!important;
+	--link-active-color: #0072ff!important;
+    --font-family:"Arial", sans-serif !important;
+	--background-url: url("https://raw.githubusercontent.com/cryxep/shiki/refs/heads/main/bg.png");
+	--img-width: 300px;
+	--img-height: calc(1.104*var(--img-width));
+	--img-padding: 8px;
+	--avatar-shadow: #fff;
+	--avatar-size: 220px;
+	--avatar-url: none;
+	--favourites-shadow: #ffffff;
+  
+}
+
+
+/* Задний фон и страница */
+body{
+	background-image: var(--background-url)!important;
+	background-position-y: top!important;
+	background-position-x: center!important;
+	background-repeat: no-repeat!important;
+	background-attachment: fixed!important;
+	background-origin: initial!important;
+	background-clip: initial!important;
+	background-color: transparent!important;
+	background-size: cover!important;
+}
+
+.l-page {
+	background-color: #ffffffdb;
+	box-shadow: 0px 0px 4px 1px #00000040;
+	margin-top: 16px;
+	border-radius: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+.p-profiles.p-profiles-show .l-page{
+	margin-top: 200px;
+	padding-left: 50px;
+	padding-right: 50px;
+}
+@media screen and (max-width: 768px) {
+	.l-page {
+		padding-left: 10px!important;
+		padding-right: 10px!important;
+	}
+}
+
+
+
+/* Аватарка, ник и надписи */
+.l-top_menu-v2 .menu-dropdown.profile>span img {
+	border-radius: 50%;
+	height: 38px;
+}
+.avatar img {
+	border-radius: 50%;
+}
+.inner header img {
+	border-radius: 50%;
+}
+.inner header > .poster img:not([src^="https://desu.shikimori.one/system/users"]) {
+	border-radius: 4px;
+}
+.b-user16 img{
+	border-radius: 50%;
+}
+.l-top_menu-v2 .icon-avatar img {
+    border-radius: 50%;
+}
+.p-topics .l-menu .clubs .entry img{
+    border-radius: 50%;
+}
+.p-profiles .profile-head .c-info .c-additionals {
+    margin: 0;
+    position: absolute;
+    top: -36px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.p-profiles .profile-head .c-brief {
+    position: relative;
+    margin-top: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+    display:  flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.p-profiles .profile-head .c-brief .avatar {
+    margin: 0;
+    max-width: none;
+    float: none;
+    position: relative;
+}
+.p-profiles .profile-head .c-mobile-actions{
+	display: none;
+}
+.p-profiles .profile-head .c-brief .avatar img {
+    width: var(--avatar-size);
+    height: var(--avatar-size);
+    box-shadow: 0 0 10px 2px var(--avatar-shadow);
+    transition: 0.2s ease-out;
+    animation: glowEffect 1.5s infinite alternate;
+}
+
+@keyframes glowEffect {
+    0% {
+        box-shadow: 0 0 10px 2px var(--avatar-shadow); /* Исходное состояние */
+    }
+    50% {
+        box-shadow: 0 0 25px 8px rgba(255, 255, 255, 255); /* Увеличение свечения */
+    }
+    100% {
+        box-shadow: 0 0 10px 2px var(--avatar-shadow); /* Возврат к исходному состоянию */
+    }
+}
+
+.p-profiles .profile-head .c-info {
+    overflow: visible;
+    position: relative;
+}
+
+.p-profiles .profile-head .c-brief header h1 {
+    display: block;
+    text-align: center;
+    font-size: 64px;
+    font-family: var(--font-family);
+    margin-bottom: 4px;
+}
+
+.l-top_menu-v2 .icon-profile:before,
+.profile-actions>a::before {
+    display: none !important;
+}
+
+
+
+
+/* Цвет ссылок */
+.b-form input[type=submit] {
+  background-color:#000;
+}
+.b-button {
+    background-color:#000;
+}
+.b-form input[type=submit]:hover {
+  background-color:#333;
+}
+.b-button:hover {
+    background-color:#333;
+}
+
+html[data-color-mode=light] {
+  --icon-color: #000;;
+  --link-color: #000;;
+}
+  
+
+
+
+
+/* Список аниме и манги */
+.c-lists-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px; /* Расстояние между колонками */
+}
+
+.b-stats_bar {
+  width: 48%; /* Каждая колонка занимает примерно половину родительского блока */
+  box-sizing: border-box;
+  padding: 10px; /* Внутренний отступ */
+  border: 1px solid #ccc; /* Рамка для визуального разделения */
+  border-radius: 5px; /* Скругленные углы */
+  background-color: #bdbdbddb; /* Цвет фона */
+}
+
+
+
+
+/* Скрыть статус сети */
+.p-profiles header.head .misc:after {  
+  display: none !important;
+}
+
+.p-profiles header.head .misc {
+  font-size: 0px; 
+}
+
+
+
+/* Скрыть друзья, клубы, история */
+.p-profiles-show .profile-content .cc-2 > .c-column {
+    display: none !important;
+}
+.p-profiles .profile-head .c-history {
+   display: none !important;
+}
+.midheadline,
+.subheadline {
+  display: none !important;
+}
+
+.b-shiki_editor footer .about-bb_codes {
+   display: none !important;
+}
+
+
+
+
